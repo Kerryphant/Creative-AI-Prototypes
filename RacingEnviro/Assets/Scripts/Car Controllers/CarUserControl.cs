@@ -34,7 +34,7 @@ public class CarUserControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("Horizontal: " + horizontal + " accelerate: " + accelerate + " brake: " + brake + " handbrake: " + handbrake);
+        //Debug.Log("Horizontal: " + horizontal + " accelerate: " + accelerate + " brake: " + brake + " handbrake: " + handbrake);
 
         carController.Move(horizontal, accelerate, brake, handbrake);
     }

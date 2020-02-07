@@ -13,11 +13,13 @@ public class CarController : MonoBehaviour
     [SerializeField] private float handbrakeTorque;
     [SerializeField] private float downForce = 120f;
     [SerializeField] private float topSpeed = 300f;
+    [Range(0, 1)] [SerializeField] private float steerHelp;
 
-    private Quaternion[] wheelMeshRotations;
-    private Rigidbody rigidbody;
-    private float steerAngle;
-    private float currentTorque;
+    Quaternion[] wheelMeshRotations;
+    Rigidbody rigidbody;
+    float steerAngle;
+    float currentTorque;
+    float oldRotation;
 
     //Getter for current speed (to be used for UI, etc)
     public float CurrentSpeed 
@@ -65,6 +67,7 @@ public class CarController : MonoBehaviour
         wheelColliders[0].steerAngle = steerAngle;
         wheelColliders[1].steerAngle = steerAngle;
 
+        SteerHelp();
         ApplyDrive(acceleration, brake);
         CapSpeed();
 
@@ -83,8 +86,9 @@ public class CarController : MonoBehaviour
     {
         //Apply torque to the rear wheels to create thrust
         float thrustTorque = acceleration * (currentTorque / 2f);
-        wheelColliders[2].motorTorque = wheelColliders[2].motorTorque = thrustTorque;
+        wheelColliders[2].motorTorque = wheelColliders[3].motorTorque = thrustTorque;
 
+        
         //Apply footbrake / reverse
         for (int i = 0; i < 4; i++)
         {
@@ -113,5 +117,25 @@ public class CarController : MonoBehaviour
     void DownForce()
     {
         rigidbody.AddForce(-transform.up * downForce * rigidbody.velocity.magnitude);
+    }
+
+    void SteerHelp()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            WheelHit hit;
+            wheelColliders[i].GetGroundHit(out hit);
+            if (hit.normal == Vector3.zero)
+                return; //No need to realign vectors if the wheel isn't on the ground
+        }
+
+        if(Mathf.Abs(oldRotation - transform.eulerAngles.y) < 10f)
+        {
+            var turnAdjust = (transform.eulerAngles.y - oldRotation) * steerHelp;
+            Quaternion velRotation = Quaternion.AngleAxis(turnAdjust, Vector3.up);
+            rigidbody.velocity = velRotation * rigidbody.velocity;
+        }
+
+        oldRotation = transform.eulerAngles.y;
     }
 }
