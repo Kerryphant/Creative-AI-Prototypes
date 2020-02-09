@@ -9,6 +9,8 @@ public class TankAgent : Agent
 	//area the tank is training in
 	private TankArea tankArea;
 
+	public GameObject projectilePrefab;
+
 	//tank's rigid body
 	Rigidbody rigidbody;
 
@@ -63,6 +65,14 @@ public class TankAgent : Agent
 	{
 		//direction tank is facing
 		AddVectorObs(transform.forward);
+	}
+
+	private void shoot()
+	{
+		//spawn projectile
+		GameObject projectile = Instantiate<GameObject>(projectilePrefab);
+		projectile.transform.parent = transform.parent;
+		projectile.transform.position = transform.position + vector;
 	}
 
 
