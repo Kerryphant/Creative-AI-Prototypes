@@ -153,6 +153,8 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 5
+  projectile: {fileID: 7079918090084859819, guid: d42d6edf6f3c33a40ba51ba7ba5583a6,
+    type: 3}
 --- !u!114 &94371653662591685
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -743,6 +743,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7079918090084859819, guid: d42d6edf6f3c33a40ba51ba7ba5583a6,
+        type: 3}
     - target: {fileID: 5953052422981180238, guid: fcb9aa8e96a547e4296177427d87ed4b,
         type: 3}
       propertyPath: m_BrainParameters.numStackedVectorObservations
