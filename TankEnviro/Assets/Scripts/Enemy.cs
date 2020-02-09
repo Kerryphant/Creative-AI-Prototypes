@@ -12,8 +12,10 @@ public class Enemy : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		//if the enemy is meant to move
 		if (enemySpeed > 0)
 		{
+			//move
 			Move();
 		}
 	}
