@@ -8,8 +8,12 @@ public class TankAgent : Agent
 {
 	//area the tank is training in
 	private TankArea tankArea;
+	
+	//prefab for the projectile the tank will shoot
+	public Projectile projectilePrefab;
 
-	public GameObject projectilePrefab;
+	//list of active projectiles
+	private List<GameObject> projectileList;
 
 	//tank's rigid body
 	Rigidbody rigidbody;
@@ -67,19 +71,17 @@ public class TankAgent : Agent
 		AddVectorObs(transform.forward);
 	}
 
-	private void shoot()
-	{
-		//spawn projectile
-		GameObject projectile = Instantiate<GameObject>(projectilePrefab);
-		projectile.transform.parent = transform.parent;
-		projectile.transform.position = transform.position + vector;
-	}
-
-
 	//we use fixed update function to avoid things breaking when game is sped up for training
 	private void FixedUpdate()
 	{
 
+	}
+
+	private void Shoot()
+	{
+		Projectile projectile = Instantiate<Projectile>(projectilePrefab);
+		projectile.transform.parent = transform.parent;
+		projectile.transform.position = transform.position + new Vector3(0, 0, 1);
 	}
 
 	//used to play test the agent actions using keyboard input
