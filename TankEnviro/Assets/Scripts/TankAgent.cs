@@ -18,15 +18,18 @@ public class TankAgent : Agent
 	//tank's rigid body
 	Rigidbody rigidbody;
 
+	Collider collider;
+
 	//tank acceleration
-	private const float acceleration = 0.5f;
+	private const float acceleration = 0.3f;
 	//tank turn speed
-	private const float turnStrength = 1;
+	private const float turnStrength = 0.6f;
 
 	private void Start()
 	{
 		tankArea = GetComponentInParent<TankArea>();
 		rigidbody = GetComponent<Rigidbody>();
+		collider = GetComponent<Collider>();
 	}
 
 	public override void AgentAction(float[] vectorAction)
@@ -48,14 +51,19 @@ public class TankAgent : Agent
 		if (vectorAction[1] == 1f)
 		{
 			//turn left by rotating around y axis
-			transform.Rotate(0.0f, -turnStrength, 0.0f, Space.Self);
+			transform.RotateAround(transform.GetChild(0).GetComponent<Collider>().bounds.center, new Vector3(0, 1, 0), -turnStrength);
 		}
 		else if (vectorAction[1] == 2f)
 		{
 			//turn right by rotating around y axis
-			transform.Rotate(0.0f, turnStrength, 0.0f, Space.Self);
+			transform.RotateAround(transform.GetChild(0).GetComponent<Collider>().bounds.center, new Vector3(0, 1, 0), turnStrength);
 		}
 
+		if (vectorAction[2] == 1f)
+		{
+			Shoot();
+		}
+		
 		//tiny negative reward every step to encourage movement
 		AddReward(-1f / agentParameters.maxStep);
 	}
@@ -81,14 +89,16 @@ public class TankAgent : Agent
 	{
 		Projectile projectile = Instantiate<Projectile>(projectilePrefab);
 		projectile.transform.parent = transform.parent;
-		projectile.transform.position = transform.position + new Vector3(0, 0, 1);
+		projectile.transform.position = transform.position + (transform.forward * 4);
+
+		projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.VelocityChange);
 	}
 
 	//used to play test the agent actions using keyboard input
 	public override float[] Heuristic()
 	{
 
-		float[] playerInput = { 0f, 0f };
+		float[] playerInput = { 0f, 0f, 0f};
 
 		if (Input.GetKey(KeyCode.W))
 		{
@@ -98,6 +108,7 @@ public class TankAgent : Agent
 		{
 			playerInput[0] = 2;
 		}
+
 		if (Input.GetKey(KeyCode.A))
 		{
 			playerInput[1] = 1;
@@ -105,6 +116,11 @@ public class TankAgent : Agent
 		if (Input.GetKey(KeyCode.D))
 		{
 			playerInput[1] = 2;
+		}
+
+		if (Input.GetKey(KeyCode.J))
+		{
+			playerInput[2] = 1;
 		}
 		return playerInput;
 	}
