@@ -19,6 +19,11 @@ public class TankAgent : Agent
 	Rigidbody rigidbody;
 
 	Collider collider;
+	
+	//Used to check if the Tank is able to shoot
+	bool readyShoot = true;
+
+	float timeSinceShoot;
 
 	//tank acceleration
 	private const float acceleration = 0.3f;
@@ -77,21 +82,46 @@ public class TankAgent : Agent
 	{
 		//direction tank is facing
 		AddVectorObs(transform.forward);
+
+		AddVectorObs(readyShoot);
 	}
 
 	//we use fixed update function to avoid things breaking when game is sped up for training
 	private void FixedUpdate()
 	{
+		timeSinceShoot += Time.fixedDeltaTime;
 
+		if (timeSinceShoot > 2)
+		{
+			readyShoot = true;
+		}
+		else 
+		{
+			readyShoot = false;
+		}
+	}
+
+	public void HitEnemy() 
+	{
+		AddReward(1);
 	}
 
 	private void Shoot()
 	{
-		Projectile projectile = Instantiate<Projectile>(projectilePrefab);
-		projectile.transform.parent = transform.parent;
-		projectile.transform.position = transform.position + (transform.forward * 4);
+		if (readyShoot) 
+		{
+			Projectile projectile = Instantiate<Projectile>(projectilePrefab);
+			projectile.transform.parent = transform.parent;
+			projectile.transform.position = transform.position + (transform.forward * 4);
 
-		projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.VelocityChange);
+			projectile.setOwner(gameObject);
+
+
+			projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.VelocityChange);
+
+			timeSinceShoot = 0;
+			readyShoot = false;
+		}
 	}
 
 	//used to play test the agent actions using keyboard input

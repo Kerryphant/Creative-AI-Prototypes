@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 94371653662591685}
   m_Layer: 0
   m_Name: TankAgent
-  m_TagString: Untagged
+  m_TagString: tankAgent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,19 +119,19 @@ MonoBehaviour:
   detectableTags:
   - enemyTank
   - wall
-  raysPerDirection: 4
-  maxRayDegrees: 80
-  sphereCastRadius: 0.5
-  rayLength: 50
+  raysPerDirection: 6
+  maxRayDegrees: 180
+  sphereCastRadius: 0.2
+  rayLength: 300
   rayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 256
   observationStacks: 3
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayHitColor: {r: 0.2469027, g: 1, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 0, b: 0, a: 1}
   useWorldPositions: 1
-  startVerticalOffset: 0
-  endVerticalOffset: 0
+  startVerticalOffset: 3
+  endVerticalOffset: 3
 --- !u!1 &2802668996145113597
 GameObject:
   m_ObjectHideFlags: 0

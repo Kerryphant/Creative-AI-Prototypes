@@ -7,11 +7,29 @@ public class Projectile : MonoBehaviour
 
     Rigidbody rigidbody;
 
+    private TankAgent owner;
+
+    public void setOwner(GameObject owner_)
+	{
+        owner = owner_.GetComponent(typeof(TankAgent)) as TankAgent;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
+        if (collision.gameObject.tag == "enemyTank")
         {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
+            //If the GameObject has the same tag as specified, output this message in the console
+            Debug.Log("Hit enemy!");
+
+
+            owner.HitEnemy();
+        }
+
+        Debug.Log("Collided with " + collision.gameObject.tag);
+
+        if (collision.gameObject.tag != "Untagged" && collision.gameObject.tag != "floor")
+        {
+            Destroy(this.gameObject);
         }
     }
 }
