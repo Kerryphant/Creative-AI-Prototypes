@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 416338192857617799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3968821818409729238}
   m_Father: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   rayHitColor: {r: 0.2469027, g: 1, b: 0, a: 1}
   rayMissColor: {r: 1, g: 0, b: 0, a: 1}
   useWorldPositions: 1
-  startVerticalOffset: 3
-  endVerticalOffset: 3
+  startVerticalOffset: 0
+  endVerticalOffset: 0
 --- !u!1 &2802668996145113597
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 2802668996145113597}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 727499881009828323}
   m_RootOrder: 0
