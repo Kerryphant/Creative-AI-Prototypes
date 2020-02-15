@@ -45,7 +45,7 @@ public class TankArea : Area
     //places the player tank randomly within an area
     private void PlaceTank()
 	{
-        tankAgent.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 12);
+        tankAgent.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 7);
         tankAgent.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
     }
 
@@ -58,7 +58,7 @@ public class TankArea : Area
             GameObject enemyObject = Instantiate<GameObject>(enemyPrefab.gameObject);
 
             //set the position of the new instance
-            enemyObject.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 12);
+            enemyObject.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 7);
             enemyObject.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
             enemyObject.transform.parent = transform;
 
