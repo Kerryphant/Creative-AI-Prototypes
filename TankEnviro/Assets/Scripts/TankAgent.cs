@@ -22,8 +22,9 @@ public class TankAgent : Agent
 	
 	//Used to check if the Tank is able to shoot
 	bool readyShoot = true;
-
 	float timeSinceShoot;
+
+	float health;
 
 	//tank acceleration
 	private const float acceleration = 0.3f;
@@ -121,6 +122,17 @@ public class TankAgent : Agent
 
 			timeSinceShoot = 0;
 			readyShoot = false;
+		}
+	}
+
+	public void TakeDamage(float dmg_value)
+	{
+		//check damage vaue is s positive number to avoid "healing"
+		if(dmg_value >= 0)
+		{
+			health -= dmg_value;
+			//negative reward to encourage avoiding damage
+			AddReward(-1f);
 		}
 	}
 
