@@ -119,6 +119,7 @@ MonoBehaviour:
   detectableTags:
   - enemyTank
   - wall
+  - tankAgent
   raysPerDirection: 6
   maxRayDegrees: 180
   sphereCastRadius: 0.2

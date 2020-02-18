@@ -9,13 +9,19 @@ public class Projectile : MonoBehaviour
 
     private TankAgent owner;
 
+    void Start()
+	{
+        Destroy(this.gameObject, 3);
+    }
+
     public void setOwner(GameObject owner_)
 	{
         owner = owner_.GetComponent(typeof(TankAgent)) as TankAgent;
     }
 
     void OnCollisionEnter(Collision collision)
-    {
+    { 
+
         if (collision.gameObject.tag == "enemyTank")
         {
             //If the GameObject has the same tag as specified, output this message in the console
@@ -25,11 +31,24 @@ public class Projectile : MonoBehaviour
             owner.HitEnemy();
         }
 
-        Debug.Log("Collided with " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "tankAgent")
+        {
+            //If the GameObject has the same tag as specified, output this message in the console
+            Debug.Log("Hit tank agent!");
 
-        if (collision.gameObject.tag != "Untagged" && collision.gameObject.tag != "floor")
+            owner.HitEnemy();
+
+            TankAgent hitTank = collision.gameObject.GetComponent(typeof(TankAgent)) as TankAgent;
+
+            hitTank.TakeDamage(5);
+        }
+
+        //collision.gameObject.tag != "Untagged" && 
+        if (collision.gameObject.tag != "floor")
         {
             Destroy(this.gameObject);
         }
+
+        Debug.Log("Collided with " + collision.gameObject.tag);
     }
 }

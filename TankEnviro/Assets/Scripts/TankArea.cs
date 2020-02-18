@@ -23,7 +23,7 @@ public class TankArea : Area
     {
         RemoveEnemies();
         PlaceTank();
-        PlaceEnemies(3, enemySpeed);
+        //PlaceEnemies(3, enemySpeed);
     }
 
     //removes all of the enemies in the area from the enemyList
@@ -45,8 +45,8 @@ public class TankArea : Area
     //places the player tank randomly within an area
     private void PlaceTank()
 	{
-        tankAgent.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 7);
-        tankAgent.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+        //tankAgent.transform.position = ChooseRandomPosition(transform.position, 15) + new Vector3(0, 0, 7);
+        //tankAgent.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
     }
 
     //places the enemy tanks randomly within an area
@@ -66,7 +66,7 @@ public class TankArea : Area
             enemyList.Add(enemyObject);
 
             //set the enemy speed
-            enemyObject.GetComponent<Enemy>().enemySpeed = enemySpeed;
+            //enemyObject.GetComponent<Enemy>().enemySpeed = enemySpeed;
 
         }
     }
@@ -74,7 +74,7 @@ public class TankArea : Area
     //could change size to be a vector3 instead of fixed value
     public static Vector3 ChooseRandomPosition(Vector3 center, int size_)
     {
-        return center + new Vector3( (UnityEngine.Random.value - 0.5f) * size_, 5.0f, (UnityEngine.Random.value - 0.5f) * size_);
+        return center + new Vector3( (UnityEngine.Random.value - 0.5f) * size_, 0.5f, (UnityEngine.Random.value - 0.5f) * size_);
     }
 
     private void Update()

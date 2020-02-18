@@ -24,7 +24,7 @@ public class TankAgent : Agent
 	bool readyShoot = true;
 	float timeSinceShoot;
 
-	float health;
+	float health = 100;
 
 	//tank acceleration
 	private const float acceleration = 0.3f;
@@ -77,6 +77,8 @@ public class TankAgent : Agent
 	public override void AgentReset()
 	{
 		tankArea.ResetArea();
+		transform.position = TankArea.ChooseRandomPosition(transform.position, 5) + new Vector3(0, 0, 7);
+		transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 	}
 
 	public override void CollectObservations()
@@ -85,11 +87,24 @@ public class TankAgent : Agent
 		AddVectorObs(transform.forward);
 
 		AddVectorObs(readyShoot);
+
+		AddVectorObs(health);
+
+		var localVelocity = transform.InverseTransformDirection(rigidbody.velocity);
+		AddVectorObs(localVelocity.x);
+		AddVectorObs(localVelocity.z);
 	}
 
 	//we use fixed update function to avoid things breaking when game is sped up for training
 	private void FixedUpdate()
 	{
+
+		if(health <= 0)
+		{
+			AddReward(-10);
+			Destroy(this.gameObject);
+		}
+
 		timeSinceShoot += Time.fixedDeltaTime;
 
 		if (timeSinceShoot > 2)
