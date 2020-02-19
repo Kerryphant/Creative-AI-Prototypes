@@ -25,6 +25,7 @@ public class TankAgent : Agent
 	float timeSinceShoot;
 
 	float health = 100;
+	Vector3 startingPos;
 
 	//tank acceleration
 	private const float acceleration = 0.3f;
@@ -36,6 +37,8 @@ public class TankAgent : Agent
 		tankArea = GetComponentInParent<TankArea>();
 		rigidbody = GetComponent<Rigidbody>();
 		collider = GetComponent<Collider>();
+
+		startingPos = transform.position;
 	}
 
 	public override void AgentAction(float[] vectorAction)
@@ -77,7 +80,7 @@ public class TankAgent : Agent
 	public override void AgentReset()
 	{
 		tankArea.ResetArea();
-		transform.position = TankArea.ChooseRandomPosition(transform.position, 5) + new Vector3(0, 0, 7);
+		transform.position = TankArea.ChooseRandomPosition(startingPos, 5) + new Vector3(0, 0, 7);
 		transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 	}
 
@@ -102,7 +105,7 @@ public class TankAgent : Agent
 		if(health <= 0)
 		{
 			AddReward(-10);
-			Destroy(this.gameObject);
+			//Destroy(this.gameObject);
 		}
 
 		timeSinceShoot += Time.fixedDeltaTime;
