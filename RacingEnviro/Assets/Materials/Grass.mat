@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_7A190F5: 0.3
-    - Vector1_80AC7C56: 0.06
+    - Vector1_80AC7C56: 0.1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
@@ -68,9 +68,9 @@ Material:
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 8
+    - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 3
-    - _ZTestTransparent: 8
+    - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
     - Vector2_2DAFE390: {r: 6, g: 0, b: 0, a: 0}
