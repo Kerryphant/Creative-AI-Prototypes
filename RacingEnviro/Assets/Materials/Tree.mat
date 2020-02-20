@@ -22,7 +22,19 @@ Material:
   - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - Texture2D_7BBE1C0D:
+        m_Texture: {fileID: 2800000, guid: 45d8794cb60d92b4799886e343cc7303, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C9AB0BB3:
+        m_Texture: {fileID: 2800000, guid: 64b662dea7bd7b04ba02e898976064e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DF5FEB7D:
+        m_Texture: {fileID: 2800000, guid: f903d0eebb4db0442ae9c44b738cdaca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_19D02BB4: 3
     - Vector1_1F1A24AA: 0.8
