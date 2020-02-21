@@ -22,8 +22,10 @@ public class TankAgent : Agent
 	
 	//Used to check if the Tank is able to shoot
 	bool readyShoot = true;
-
 	float timeSinceShoot;
+
+	float health = 100;
+	Vector3 startingPos;
 
 	//tank acceleration
 	private const float acceleration = 0.3f;
@@ -35,6 +37,8 @@ public class TankAgent : Agent
 		tankArea = GetComponentInParent<TankArea>();
 		rigidbody = GetComponent<Rigidbody>();
 		collider = GetComponent<Collider>();
+
+		startingPos = transform.position;
 	}
 
 	public override void AgentAction(float[] vectorAction)
@@ -76,6 +80,8 @@ public class TankAgent : Agent
 	public override void AgentReset()
 	{
 		tankArea.ResetArea();
+		transform.position = TankArea.ChooseRandomPosition(startingPos, 5) + new Vector3(0, 0, 7);
+		transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 	}
 
 	public override void CollectObservations()
@@ -84,11 +90,24 @@ public class TankAgent : Agent
 		AddVectorObs(transform.forward);
 
 		AddVectorObs(readyShoot);
+
+		AddVectorObs(health);
+
+		var localVelocity = transform.InverseTransformDirection(rigidbody.velocity);
+		AddVectorObs(localVelocity.x);
+		AddVectorObs(localVelocity.z);
 	}
 
 	//we use fixed update function to avoid things breaking when game is sped up for training
 	private void FixedUpdate()
 	{
+
+		if(health <= 0)
+		{
+			AddReward(-10);
+			//Destroy(this.gameObject);
+		}
+
 		timeSinceShoot += Time.fixedDeltaTime;
 
 		if (timeSinceShoot > 2)
@@ -121,6 +140,17 @@ public class TankAgent : Agent
 
 			timeSinceShoot = 0;
 			readyShoot = false;
+		}
+	}
+
+	public void TakeDamage(float dmg_value)
+	{
+		//check damage vaue is s positive number to avoid "healing"
+		if(dmg_value >= 0)
+		{
+			health -= dmg_value;
+			//negative reward to encourage avoiding damage
+			AddReward(-1f);
 		}
 	}
 
