@@ -15,6 +15,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private float topSpeed = 300f;
     [Range(0, 1)] [SerializeField] private float steerHelp;
 
+    public Collider carCollider;
+
     Quaternion[] wheelMeshRotations;
     Rigidbody rigidbody;
     float steerAngle;
@@ -40,6 +42,8 @@ public class CarController : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody>();
         currentTorque = fullTorque;
+           
+        Physics.IgnoreLayerCollision(9, 9);
     }
 
     public void Move(float steer, float acceleration, float brake, bool handbrake)
@@ -48,12 +52,12 @@ public class CarController : MonoBehaviour
         //Unity doesn't seem to like having the meshes and colliders in the same object so this is neccesary
         for (int i = 0; i < 4; i++)
         {
-            Quaternion q;
-            Vector3 pos;
+           // Quaternion q;
+           // Vector3 pos;
 
-            wheelColliders[i].GetWorldPose(out pos, out q);
-            wheelMeshes[i].transform.position = pos;
-            wheelMeshes[i].transform.rotation = q;
+           // wheelColliders[i].GetWorldPose(out pos, out q);
+           //wheelMeshes[i].transform.position = pos;
+           // wheelMeshes[i].transform.rotation = q;
         }
 
         //Clamp all the input values
@@ -80,6 +84,11 @@ public class CarController : MonoBehaviour
         }
 
         DownForce();
+    }
+
+    public void Reset()
+    {
+        rigidbody.velocity = Vector3.zero;
     }
 
     void ApplyDrive(float acceleration, float brake)
@@ -137,5 +146,31 @@ public class CarController : MonoBehaviour
         }
 
         oldRotation = transform.eulerAngles.y;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject);
+
+        if(collision.gameObject.tag == "Car")
+        {
+            Physics.IgnoreCollision(collision.collider, carCollider, true);
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            CarAgent agent = gameObject.GetComponent<CarAgent>();
+            if (agent != null)
+                agent.AddReward(-1);
+        }
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            CarAgent agent = gameObject.GetComponent<CarAgent>();
+            if (agent != null)
+                agent.AddReward(-0.10f);
+        }
     }
 }
