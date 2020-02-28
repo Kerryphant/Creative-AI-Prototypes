@@ -9,6 +9,7 @@ TagManager:
   - tankAgent
   - projectile
   - floor
+  - MainLight
   layers:
   - Default
   - TransparentFX

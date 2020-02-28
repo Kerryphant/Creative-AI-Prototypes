@@ -32,7 +32,7 @@ MonoBehaviour:
     id=\"20\" />\r\n            </guard>\r\n            <child>\r\n              <SubbehaviorNode
     id=\"17\" />\r\n            </child>\r\n          </GuardAndNode>\r\n        </elem>\r\n
     \     </children>\r\n      <inputParams />\r\n      <outputParams />\r\n      <localParams
-    />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"19\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\"
+    />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"19\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\"
     name=\"Perception/IsTargetClose\">\r\n      <inputParams>\r\n        <inputValues>\r\n
     \         <entry name=\"target\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
     blackboard=\"player\" />\r\n          <entry name=\"closeDistance\" type=\"System.Single\"
@@ -71,7 +71,7 @@ MonoBehaviour:
     id=\"0\" />\r\n          <PrioritySelectorNode id=\"1\" />\r\n          <RepeatDecorator
     id=\"6\" />\r\n        </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n
     \   <ConditionEvalNode id=\"19\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"300.2989 391.5556\" name=\"Perception/IsTargetClose\"
+    selected=\"True\" position=\"300.2989 391.5556\" name=\"Perception/IsTargetClose\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"19\" />\r\n          <PrioritySelectorNode
     id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n
