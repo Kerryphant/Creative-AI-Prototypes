@@ -1506,36 +1506,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 29619377}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &46665762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 46665763}
-  m_Layer: 0
-  m_Name: shootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &46665763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46665762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1506338875}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &49523214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3121,12 +3091,20 @@ PrefabInstance:
     - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: health
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 94371653662591685, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
-    - {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
-    - {fileID: 5953052422981180238, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
 --- !u!1 &176216858
 GameObject:
@@ -3264,10 +3242,8 @@ MonoBehaviour:
     boolParams: 
     boolParamsNames: []
     boolParamsLostDefaultValue: 
-    floatParams:
-    - 0
-    floatParamsNames:
-    - angle
+    floatParams: []
+    floatParamsNames: []
     floatParamsLostDefaultValue: 
     stringParams:
     - tankAgent
@@ -3279,14 +3255,8 @@ MonoBehaviour:
     colorParamsLostDefaultValue: 
     objectParams:
     - {fileID: 176216858}
-    - {fileID: 1448103415}
-    - {fileID: 335515757254912304, guid: d42d6edf6f3c33a40ba51ba7ba5583a6, type: 3}
-    - {fileID: 0}
     objectParamsNames:
     - wanderArea
-    - shootPoint
-    - bullet
-    - enemy
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -4702,82 +4672,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 273976916}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &327161510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 12
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1001 &382047902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6559,10 +6453,8 @@ MonoBehaviour:
     boolParams: 
     boolParamsNames: []
     boolParamsLostDefaultValue: 
-    floatParams:
-    - 0
-    floatParamsNames:
-    - angle
+    floatParams: []
+    floatParamsNames: []
     floatParamsLostDefaultValue: 
     stringParams:
     - tankAgent
@@ -6573,15 +6465,9 @@ MonoBehaviour:
     colorParamsNames: []
     colorParamsLostDefaultValue: 
     objectParams:
-    - {fileID: 1115473167}
-    - {fileID: 335515757254912304, guid: d42d6edf6f3c33a40ba51ba7ba5583a6, type: 3}
     - {fileID: 176216858}
-    - {fileID: 0}
     objectParamsNames:
-    - shootPoint
-    - bullet
     - wanderArea
-    - enemy
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -6687,11 +6573,19 @@ PrefabInstance:
     - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: health
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
-    - {fileID: 5953052422981180238, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
     - {fileID: 94371653662591685, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
 --- !u!1 &587336005
@@ -8357,11 +8251,19 @@ PrefabInstance:
     - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: health
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
-    - {fileID: 5953052422981180238, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
     - {fileID: 94371653662591685, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
 --- !u!1001 &673622750
@@ -13149,36 +13051,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce61ad0bdaaa414e94bc8dfba79106a, type: 3}
---- !u!1 &1115473166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1115473167}
-  m_Layer: 0
-  m_Name: shootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1115473167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115473166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1976742712}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1145143602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14842,66 +14714,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1318232587}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1448103414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1448103415}
-  m_Layer: 0
-  m_Name: shootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1448103415
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448103414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 980598245}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1453183343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1453183344}
-  m_Layer: 0
-  m_Name: shootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1453183344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453183343}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1636853832}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463949007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17707,10 +17519,8 @@ MonoBehaviour:
     boolParams: 
     boolParamsNames: []
     boolParamsLostDefaultValue: 
-    floatParams:
-    - 0
-    floatParamsNames:
-    - angle
+    floatParams: []
+    floatParamsNames: []
     floatParamsLostDefaultValue: 
     stringParams:
     - tankAgent
@@ -17721,15 +17531,9 @@ MonoBehaviour:
     colorParamsNames: []
     colorParamsLostDefaultValue: 
     objectParams:
-    - {fileID: 46665763}
-    - {fileID: 335515757254912304, guid: d42d6edf6f3c33a40ba51ba7ba5583a6, type: 3}
     - {fileID: 176216858}
-    - {fileID: 0}
     objectParamsNames:
-    - shootPoint
-    - bullet
     - wanderArea
-    - enemy
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -19145,6 +18949,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1508325794}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1596127533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 12
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &1636853831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 416338192857617799, guid: fcb9aa8e96a547e4296177427d87ed4b,
@@ -19180,10 +19060,8 @@ MonoBehaviour:
     boolParams: 
     boolParamsNames: []
     boolParamsLostDefaultValue: 
-    floatParams:
-    - 0
-    floatParamsNames:
-    - angle
+    floatParams: []
+    floatParamsNames: []
     floatParamsLostDefaultValue: 
     stringParams:
     - tankAgent
@@ -19194,15 +19072,9 @@ MonoBehaviour:
     colorParamsNames: []
     colorParamsLostDefaultValue: 
     objectParams:
-    - {fileID: 1453183344}
-    - {fileID: 335515757254912304, guid: d42d6edf6f3c33a40ba51ba7ba5583a6, type: 3}
     - {fileID: 176216858}
-    - {fileID: 0}
     objectParamsNames:
-    - shootPoint
-    - bullet
     - wanderArea
-    - enemy
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -19308,11 +19180,19 @@ PrefabInstance:
     - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b,
+        type: 3}
+      propertyPath: health
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1437591244361407227, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
-    - {fileID: 5953052422981180238, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
     - {fileID: 94371653662591685, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcb9aa8e96a547e4296177427d87ed4b, type: 3}
 --- !u!4 &1826964878 stripped

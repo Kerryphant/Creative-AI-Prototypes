@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
 
             owner.HitEnemy();
 
-            TankAgent hitTank = collision.gameObject.GetComponent(typeof(TankAgent)) as TankAgent;
+            TankAgent hitTank = collision.gameObject.GetComponent<TankAgent>();
 
             hitTank.TakeDamage(5);
         }
