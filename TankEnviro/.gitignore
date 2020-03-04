@@ -60,3 +60,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+#File generated when training
+csharp_timers.json
