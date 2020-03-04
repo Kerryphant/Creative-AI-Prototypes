@@ -13,6 +13,7 @@
     "com.unity.postprocessing": "2.1.7",
     "com.unity.probuilder": "4.0.5",
     "com.unity.progrids": "3.0.3-preview.4",
+    "com.unity.properties": "0.6.4-preview",
     "com.unity.render-pipelines.high-definition": "6.9.2-preview",
     "com.unity.terrain-tools": "2.0.2-preview",
     "com.unity.test-framework": "1.0.18",
@@ -50,7 +51,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.unity.properties": "0.6.4-preview"
+    "com.unity.modules.xr": "1.0.0"
   }
 }

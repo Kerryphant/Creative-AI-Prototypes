@@ -1,0 +1,11 @@
+{
+    "measure" : "reward",
+    "thresholds" : [ -0.1, 0.7, 1.7, 1.7, 1.7, 2.7, 2.7 ],
+    "min_lesson_length" : 80,
+    "signal_smoothing" : true, 
+    "parameters" : 
+    {
+        "enemy_speed" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5 ],
+        "turret_range" : [ 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.5, 0.2 ]
+    }
+}
