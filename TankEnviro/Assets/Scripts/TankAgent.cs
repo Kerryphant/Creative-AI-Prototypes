@@ -21,10 +21,10 @@ public class TankAgent : Agent
 	Collider collider;
 	
 	//Used to check if the Tank is able to shoot
-	bool readyShoot = true;
-	float timeSinceShoot;
+	public bool readyShoot = true;
+	public float timeSinceShoot;
 
-	float health = 100;
+	public float health = 15;
 	Vector3 startingPos;
 
 	//tank acceleration
@@ -105,7 +105,7 @@ public class TankAgent : Agent
 		if(health <= 0)
 		{
 			AddReward(-10);
-			//Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 
 		timeSinceShoot += Time.fixedDeltaTime;
@@ -125,13 +125,13 @@ public class TankAgent : Agent
 		AddReward(1);
 	}
 
-	private void Shoot()
+	public void Shoot()
 	{
 		if (readyShoot) 
 		{
 			Projectile projectile = Instantiate<Projectile>(projectilePrefab);
 			projectile.transform.parent = transform.parent;
-			projectile.transform.position = transform.position + (transform.forward * 4);
+			projectile.transform.position = transform.position + (transform.forward * 2) + (transform.up * 1.5f);
 
 			projectile.setOwner(gameObject);
 
