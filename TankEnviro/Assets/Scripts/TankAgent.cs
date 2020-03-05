@@ -104,8 +104,12 @@ public class TankAgent : Agent
 
 		if(health <= 0)
 		{
-			AddReward(-10);
-			Destroy(gameObject);
+			//AddReward(-10);
+			//Destroy(gameObject);
+			health = 15;
+
+			transform.position = TankArea.ChooseRandomPosition(startingPos, 5) + new Vector3(0, 0, 7);
+			transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 		}
 
 		timeSinceShoot += Time.fixedDeltaTime;
