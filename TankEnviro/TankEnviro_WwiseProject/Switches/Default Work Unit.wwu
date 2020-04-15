@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4E8BD735-6E52-4071-A6A2-198F4428E88B}" SchemaVersion="94">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{4E8BD735-6E52-4071-A6A2-198F4428E88B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="TankHit" ID="{2AD2A670-D848-4069-8D18-13ADD8BD132C}">
+					<ChildrenList>
+						<Switch Name="Ground" ID="{3048DA72-92A5-4955-AF56-08F9CEB5F6B3}"/>
+						<Switch Name="Wall" ID="{4BEB2AF8-3B81-4767-92B2-9F31D06EFED0}"/>
+						<Switch Name="Tank" ID="{C34BF1FA-DA54-4FCE-96BB-529CF50AF1FC}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BDC2C452-6576-467F-B957-4FED5BA5352D}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{BDC2C452-6576-467F-B957-4FED5BA5352D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{35FBCAF5-1C20-48EE-A7B6-0B3E5639BBC8}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Tank Hit Ground" ID="{F97F88B2-8426-40BC-88CA-1D6D20E6432B}" WorkUnitID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Tank Treads" ID="{66BF916D-1112-41C7-96D2-87F6D85B9DFE}" WorkUnitID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Main Music" ID="{266805F3-FB5E-463D-B78B-DDF1BF4B67EF}" WorkUnitID="{7EC32CE3-A5B8-4997-8BCE-80FE80433C8C}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Tank Hit Tank" ID="{FD4FC39F-D842-4E50-BFB1-0BD5984CD1EA}" WorkUnitID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Tank Fire" ID="{0E47BDFA-196E-4E7B-93FE-6DD385087438}" WorkUnitID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

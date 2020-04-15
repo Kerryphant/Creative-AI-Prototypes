@@ -16,8 +16,11 @@ public class TankAgent : Agent
 	private const float acceleration = 0.5f;
 	//tank turn speed
 	private const float turnStrength = 1;
+    /// The Wwise event to trigger the tank engine sound
+	public AK.Wwise.Event TankTreads = new AK.Wwise.Event();
 
-	private void Start()
+
+    private void Start()
 	{
 		tankArea = GetComponentInParent<TankArea>();
 		rigidbody = GetComponent<Rigidbody>();
@@ -31,7 +34,9 @@ public class TankAgent : Agent
 		{
 			//move forwards
 			rigidbody.AddForce(transform.forward * acceleration, ForceMode.VelocityChange);
-		}
+            //Plays TankTreads Event
+            TankTreads.Post(gameObject);
+        }
 		else if (vectorAction[0] == 2f)
 		{
 			//move backwards

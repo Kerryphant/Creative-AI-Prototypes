@@ -1,0 +1,22 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3991942870	Music			\Default Work Unit\Music	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1011364690	TankHitOther			\Default Work Unit\TankHitOther	
+
+Switch	ID	Name	Switch Group			Notes
+	2108779961	Wall	TankHitOther			
+	2528658256	Ground	TankHitOther			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	3155698	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_a_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		580420
+	86564645	Tank Fire	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\Tank Fire_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Fire		5874256
+	139474178	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_c_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		513388
+	207172588	Tank Hit	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\Tank Hit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Hit		54520
+	327025995	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_d_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		617464
+	586871718	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_b_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		571600
+	629686441	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_e_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		490456
+	864377716	Tank Treads	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\Tank Treads_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Treads		169632
+	886430447	Test	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\MX_UNI_AMB_Walls_f_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\Main Music\Test		594532
+	974067517	Tank Hit Ground	C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\SFX\SX_UNI_PLR_Landing_Gravel_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tank Hit Other\Tank Hit Ground		86200
+

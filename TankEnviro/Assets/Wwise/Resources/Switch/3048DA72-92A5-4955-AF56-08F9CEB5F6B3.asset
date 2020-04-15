@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51b54499afee314ebde8950d24fb498, type: 3}
+  m_Name: 3048DA72-92A5-4955-AF56-08F9CEB5F6B3
+  m_EditorClassIdentifier: 
+  objectName: Ground
+  id: 2528658256
+  guid: 3048DA72-92A5-4955-AF56-08F9CEB5F6B3
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 5efa7d8579a021946902e10459b16b2b,
+    type: 2}

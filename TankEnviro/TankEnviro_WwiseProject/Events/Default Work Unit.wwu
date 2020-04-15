@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{40C3C7AB-884C-4B4B-90A6-CD469D56EE6A}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{40C3C7AB-884C-4B4B-90A6-CD469D56EE6A}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Music" ID="{43A4E05B-4F6D-45FD-9165-C9B7365A62B7}">
+					<ChildrenList>
+						<Action Name="" ID="{C21FA1C1-8A43-4485-80B8-88D14F22BE4F}" ShortID="108509473">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Music" ID="{266805F3-FB5E-463D-B78B-DDF1BF4B67EF}" WorkUnitID="{7EC32CE3-A5B8-4997-8BCE-80FE80433C8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tank_Hit_Other" ID="{4F9F223E-1FA3-4D81-9261-B48772A43269}">
+					<ChildrenList>
+						<Action Name="" ID="{C87B9E3F-4073-4E5B-800C-643A7DED689D}" ShortID="501948160">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tank Hit Other" ID="{0B71287C-0DB4-43EF-9968-518A92C5E98D}" WorkUnitID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62aad81f68459184db71961adada88c8, type: 3}
+  m_Name: 2AD2A670-D848-4069-8D18-13ADD8BD132C
+  m_EditorClassIdentifier: 
+  objectName: TankHit
+  id: 2623961212
+  guid: 2AD2A670-D848-4069-8D18-13ADD8BD132C

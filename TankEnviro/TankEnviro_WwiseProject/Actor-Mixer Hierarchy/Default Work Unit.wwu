@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{CEF367EB-8636-4E0F-83F7-76323CC5BEF7}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Tank Fire" ID="{0E47BDFA-196E-4E7B-93FE-6DD385087438}" ShortID="278775049">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tank Fire" ID="{DE49D638-99B4-42DA-ACF9-2B36F734BCDD}" ShortID="86564645">
+							<Language>SFX</Language>
+							<AudioFile>Tank Fire.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tank Fire" ID="{DE49D638-99B4-42DA-ACF9-2B36F734BCDD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Tank Treads" ID="{66BF916D-1112-41C7-96D2-87F6D85B9DFE}" ShortID="151554301">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{91ECADBF-A5A7-4B5E-8CA9-CE3EB9C5FED4}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tank Treads" ID="{CF21E7CB-735C-4507-953C-5B214C9C9A79}" ShortID="864377716">
+							<Language>SFX</Language>
+							<AudioFile>Tank Treads.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tank Treads" ID="{CF21E7CB-735C-4507-953C-5B214C9C9A79}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<SwitchContainer Name="Tank Hit Other" ID="{0B71287C-0DB4-43EF-9968-518A92C5E98D}" ShortID="570651028">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Ground" ID="{3048DA72-92A5-4955-AF56-08F9CEB5F6B3}" WorkUnitID="{4E8BD735-6E52-4071-A6A2-198F4428E88B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="TankHit" ID="{2AD2A670-D848-4069-8D18-13ADD8BD132C}" WorkUnitID="{4E8BD735-6E52-4071-A6A2-198F4428E88B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Tank Hit Ground" ID="{F97F88B2-8426-40BC-88CA-1D6D20E6432B}" ShortID="445287155">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SX_UNI_PLR_Landing_Gravel_01" ID="{7D54A153-B46C-429B-ACC9-7D881EACCBF3}" ShortID="974067517">
+									<Language>SFX</Language>
+									<AudioFile>SX_UNI_PLR_Landing_Gravel_01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SX_UNI_PLR_Landing_Gravel_01" ID="{7D54A153-B46C-429B-ACC9-7D881EACCBF3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Tank Hit Wall" ID="{F427D0C9-1D35-4392-923D-15DCCA57CBEE}" ShortID="800972032">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Tank Hit Wall" ID="{87782FBC-A7FA-4F46-963C-2E61D1C2239E}" ShortID="873840969">
+									<Language>SFX</Language>
+									<AudioFile>Tank Hit Wall.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Tank Hit Wall" ID="{87782FBC-A7FA-4F46-963C-2E61D1C2239E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Tank Hit Tank" ID="{FD4FC39F-D842-4E50-BFB1-0BD5984CD1EA}" ShortID="398218765">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22C3E2BE-461F-492C-9759-8EED6577E47A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{61E243C4-9843-458A-B4BB-C0D30C56E549}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Tank Hit" ID="{60A59A51-AE1D-4D5A-B7B6-359E403E9813}" ShortID="207172588">
+									<Language>SFX</Language>
+									<AudioFile>Tank Hit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Tank Hit" ID="{60A59A51-AE1D-4D5A-B7B6-359E403E9813}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Tank Hit Tank" ID="{FD4FC39F-D842-4E50-BFB1-0BD5984CD1EA}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Tank Hit Ground" ID="{F97F88B2-8426-40BC-88CA-1D6D20E6432B}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Tank Hit Wall" ID="{F427D0C9-1D35-4392-923D-15DCCA57CBEE}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Ground" ID="{3048DA72-92A5-4955-AF56-08F9CEB5F6B3}"/>
+								<ItemList>
+									<ItemRef Name="Tank Hit Ground" ID="{F97F88B2-8426-40BC-88CA-1D6D20E6432B}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Wall" ID="{4BEB2AF8-3B81-4767-92B2-9F31D06EFED0}"/>
+								<ItemList>
+									<ItemRef Name="Tank Hit Wall" ID="{F427D0C9-1D35-4392-923D-15DCCA57CBEE}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Tank" ID="{C34BF1FA-DA54-4FCE-96BB-529CF50AF1FC}"/>
+								<ItemList>
+									<ItemRef Name="Tank Hit Tank" ID="{FD4FC39F-D842-4E50-BFB1-0BD5984CD1EA}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

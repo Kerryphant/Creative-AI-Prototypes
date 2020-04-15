@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\James\Documents\GitHub\Creative-AI-Prototypes\TankEnviro\TankEnviro_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="3155698" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_a.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_a_D79FB2B7.wem</Path>
+				</File>
+				<File Id="86564645" Language="SFX">
+					<ShortName>Tank Fire.wav</ShortName>
+					<Path>SFX\Tank Fire_10C4C929.wem</Path>
+				</File>
+				<File Id="139474178" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_c.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_c_D79FB2B7.wem</Path>
+				</File>
+				<File Id="207172588" Language="SFX">
+					<ShortName>Tank Hit.wav</ShortName>
+					<Path>SFX\Tank Hit_10C4C929.wem</Path>
+				</File>
+				<File Id="327025995" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_d.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_d_D79FB2B7.wem</Path>
+				</File>
+				<File Id="586871718" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_b.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_b_D79FB2B7.wem</Path>
+				</File>
+				<File Id="629686441" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_e.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_e_D79FB2B7.wem</Path>
+				</File>
+				<File Id="864377716" Language="SFX">
+					<ShortName>Tank Treads.wav</ShortName>
+					<Path>SFX\Tank Treads_D79FB2B7.wem</Path>
+				</File>
+				<File Id="886430447" Language="SFX">
+					<ShortName>MX_UNI_AMB_Walls_f.wav</ShortName>
+					<Path>SFX\MX_UNI_AMB_Walls_f_D79FB2B7.wem</Path>
+				</File>
+				<File Id="974067517" Language="SFX">
+					<ShortName>SX_UNI_PLR_Landing_Gravel_01.wav</ShortName>
+					<Path>SFX\SX_UNI_PLR_Landing_Gravel_01_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
