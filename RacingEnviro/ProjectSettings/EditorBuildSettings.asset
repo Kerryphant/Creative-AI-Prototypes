@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: a093b2e93fcd89f498f4a37086c78b69
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Isobel's Terrain.unity
     guid: 4ee954c733721f94db3c0ece3e7e244c
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: cbfe36cfddfde964d9dfce63a355d5dd
+  - enabled: 1
+    path: Assets/Scenes/Racing Level.unity
+    guid: 2259c437d38555b44ab806070be9dae1
   m_configObjects: {}

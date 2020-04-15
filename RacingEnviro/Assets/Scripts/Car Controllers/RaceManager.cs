@@ -14,10 +14,11 @@ public class RaceManager : MonoBehaviour
 
     public CheckPointEvent reachedCorrectCheckpoint;
 
-    Dictionary<GameObject, Checkpoint> nextCheckpoint = new Dictionary<GameObject, Checkpoint>(16);
-
+    public Dictionary<GameObject, Checkpoint> nextCheckpoint = new Dictionary<GameObject, Checkpoint>(16);
+    
     void OnEnable()
     {
+        //Add event callbacks 
         for (int i = 0; i < checkpoints.Count; i++)
         {
             checkpoints[i].OnReachCheckpoint += CheckHitCheckpoint;
@@ -26,6 +27,7 @@ public class RaceManager : MonoBehaviour
 
     void OnDisable()
     {
+        //Remove event callback
         for (int i = 0; i < checkpoints.Count; i++)
         {
             checkpoints[i].OnReachCheckpoint -= CheckHitCheckpoint;
@@ -36,12 +38,24 @@ public class RaceManager : MonoBehaviour
     {
         GameObject[] cars = GameObject.FindGameObjectsWithTag("Car");
 
+        //Collect all the cars and their next checkpoint
         for (int i = 0; i < cars.Length; i++)
         {
             nextCheckpoint.Add(cars[i], checkpoints[0]);
         }
     }
 
+    public void Reset()
+    {
+        Start();
+    }
+
+    public void ResetAgentCP(GameObject agent)
+    {
+        nextCheckpoint[agent] = checkpoints[0];
+    }
+
+    //Checks if the correct checkpoint has been hit, if the wrong checkpoint is hit a negative reward is given
     void CheckHitCheckpoint(CarController car, Checkpoint checkpoint)
     {
         if (ContainsKeyPair(car.gameObject, checkpoint))
@@ -49,11 +63,16 @@ public class RaceManager : MonoBehaviour
             nextCheckpoint[car.gameObject] = checkpoints[GetNextCheckpoint(checkpoints.IndexOf(checkpoint))];
             HitCorrectCheckpoint(car, checkpoint);
         }
+        else
+        {
+            car.gameObject.GetComponent<CarAgent>().AddReward(-10);
+        }
     }
 
     void HitCorrectCheckpoint(CarController car, Checkpoint checkpoint)
     {
-        reachedCorrectCheckpoint.Invoke(checkpoint);
+        car.gameObject.GetComponent<CarAgent>().ReachedCheckpoint(checkpoint);
+        //reachedCorrectCheckpoint.Invoke(checkpoint);
     }
 
     public bool ContainsKeyPair(GameObject key, Checkpoint value)

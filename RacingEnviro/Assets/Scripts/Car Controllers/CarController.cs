@@ -63,7 +63,7 @@ public class CarController : MonoBehaviour
         //Clamp all the input values
         steer = Mathf.Clamp(steer, -1, 1);
         acceleration = Mathf.Clamp(acceleration, 0, 1);
-        brake = -1 * Mathf.Clamp(brake, -1, 0);
+        brake = Mathf.Clamp(brake, 0, 1);
 
         //Set the front wheels to steer
         //0 and 1 are the front wheels in the array
@@ -105,6 +105,8 @@ public class CarController : MonoBehaviour
             if(CurrentSpeed > 3 && Vector3.Angle(transform.forward, rigidbody.velocity) < 45f)
             {
                 wheelColliders[i].brakeTorque = brakeTorque * brake;
+
+                //Debug.Log(wheelColliders[i].brakeTorque);
             } else if (brake > 0)
             {
                 wheelColliders[i].brakeTorque = 0f;
@@ -161,7 +163,10 @@ public class CarController : MonoBehaviour
         {
             CarAgent agent = gameObject.GetComponent<CarAgent>();
             if (agent != null)
-                agent.AddReward(-1);
+            {
+                //agent.AddReward(-100);
+                agent.Done();
+            }
         }
     }
     void OnCollisionStay(Collision collision)

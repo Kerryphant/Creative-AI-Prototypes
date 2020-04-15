@@ -29,6 +29,7 @@ public class CarAgent : Agent
         startRot = this.transform.rotation;
     }
 
+    //Reset the agent to it's starting position
     public override void AgentReset()
     {
         base.AgentReset();
@@ -36,15 +37,16 @@ public class CarAgent : Agent
         transform.position = startPos;
         transform.rotation = startRot;
         controller.Reset();
+        raceManager.ResetAgentCP(this.gameObject);
     }
 
+    //Give the agent a reward when it reaches a checkpoint
     public void ReachedCheckpoint(Checkpoint checkpoint)
     {
         AddReward(checkpointReward);
-
-        Debug.Log("Reached Checkpoint");
     }
 
+    //Sets all the agent actions;
     public override void AgentAction(float[] vectorAction)
     {
         base.AgentAction(vectorAction);
@@ -54,8 +56,6 @@ public class CarAgent : Agent
         horizontal = vectorAction[1];
 
         brake = vectorAction[2];
-
-        AddReward(controller.CurrentSpeed * .001f);
     }
 
     private void FixedUpdate()
@@ -73,12 +73,20 @@ public class CarAgent : Agent
 
         rewardText.text = GetCumulativeReward().ToString("0.00");
 
-        if(GetCumulativeReward() < -50)
+        //Reward the agent based on it's current speed, making the incentive getting around the track quickly
+        AddReward(controller.CurrentSpeed * .001f);
+
+        //If the agent somehow manages to get to -50 reward reset it
+        if (GetCumulativeReward() < -50)
         {
             Done();
         }
 
-        //Debug.Log(GetCumulativeReward());
+        //Punish the agent if it isn't moving
+        if(controller.CurrentSpeed == 0)
+        {
+            AddReward(-0.1f);
+        }
     }
 
     //Collecting all the non raycast observations
@@ -89,5 +97,11 @@ public class CarAgent : Agent
 
         //Direction the car is going (1 vector3 = 3 values)
         AddVectorObs(transform.forward);
+
+        //Position of the car (1 vector 3 = 3 values)
+        AddVectorObs(transform.position);
+
+        //Position of next checkpoint (1 vector 3 = 3 values)
+        AddVectorObs(raceManager.nextCheckpoint[this.gameObject].transform.position);
     }
 }

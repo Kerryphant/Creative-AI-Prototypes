@@ -14,6 +14,7 @@ public class Checkpoint : MonoBehaviour
         GetComponent<BoxCollider>().isTrigger = true;
     }
 
+    //When a car enters the collider, invoke the reached checkpoint event
     private void OnTriggerEnter(Collider other)
     {
         CarController car = other.GetComponentInParent<CarController>();
