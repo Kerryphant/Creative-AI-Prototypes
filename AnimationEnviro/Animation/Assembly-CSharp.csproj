@@ -99,6 +99,8 @@
      <Compile Include="Assets\Imported\ML-Agents\Examples\Walker\Scripts\WalkerAgent.cs" />
      <Compile Include="Assets\Imported\ML-Agents\Examples\WallJump\Scripts\WallJumpAgent.cs" />
      <Compile Include="Assets\Imported\ML-Agents\Examples\WallJump\Scripts\WallJumpSettings.cs" />
+     <Compile Include="Assets\Scripts\AnimationAgent.cs" />
+     <Compile Include="Assets\Scripts\TargetScript.cs" />
      <None Include="Assets\Imported\ML-Agents\Examples\SharedAssets\Materials\ShaderRadialGrid.shader" />
      <None Include="Assets\Imported\ML-Agents\Examples\SharedAssets\Materials\GridPatternShader.shader" />
      <None Include="Assets\Imported\ML-Agents\Examples\SharedAssets\Materials\ShaderOutline.shader" />
