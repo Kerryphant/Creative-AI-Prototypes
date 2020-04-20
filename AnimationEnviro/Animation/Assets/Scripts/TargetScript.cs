@@ -13,7 +13,7 @@ public class TargetScript : MonoBehaviour
     {
         if(collider.gameObject.tag == "walker")
         {
-            //collider.Respawn();
+            collider.GetComponent<AnimationAgent>().TouchedTarget();
         }
     }
 }
