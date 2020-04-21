@@ -6,6 +6,7 @@ TagManager:
   tags:
   - target
   - walker
+  - ground
   layers:
   - Default
   - TransparentFX
