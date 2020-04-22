@@ -20,14 +20,9 @@ public class TankAcademy : Academy
         foreach (TankArea tankArea in tankAreas)
         {
             //set up values from curriculum
-            FloatProperties.RegisterCallback("enemy_speed", f =>
+            FloatProperties.RegisterCallback("spawn_radius", f =>
             {
-                tankArea.enemySpeed = f;
-            });
-
-            FloatProperties.RegisterCallback("turret_range", f =>
-            {
-                tankArea.turretRange = f;
+                tankArea.spawnRadius = f;
             });
 
             //reset objects inside the area

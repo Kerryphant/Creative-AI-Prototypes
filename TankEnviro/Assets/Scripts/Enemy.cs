@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 			randomizedSpeed = enemySpeed * UnityEngine.Random.Range(.5f, 1.5f);
 
 			//pick a random target
-			targetPosition = TankArea.ChooseRandomPosition(transform.parent.position, 15) + new Vector3(0, 0, 12);
+			//targetPosition = TankArea.ChooseRandomPosition(transform.parent.position, 15) + new Vector3(0, 0, 12);
 
 			//rotate toward the target
 			transform.rotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
