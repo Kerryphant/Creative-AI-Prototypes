@@ -10,7 +10,23 @@ public class AnimationAgent : Agent
     public Quaternion startRot;
 
     public Transform body;
-    public Transform[] joints = new Transform[16];
+    //public Transform[] joints = new Transform[16];
+    public Transform jointUpper1;
+    public Transform jointLower1;
+    public Transform jointUpper2;
+    public Transform jointLower2;
+    public Transform jointUpper3;
+    public Transform jointLower3;
+    public Transform jointUpper4;
+    public Transform jointLower4;
+    public Transform jointUpper5;
+    public Transform jointLower5;
+    public Transform jointUpper6;
+    public Transform jointLower6;
+    public Transform jointUpper7;
+    public Transform jointLower7;
+    public Transform jointUpper8;
+    public Transform jointLower8;
 
     int MaxStep = 5000;
 
@@ -21,6 +37,8 @@ public class AnimationAgent : Agent
 
     public override void InitializeAgent()
     {
+        base.InitializeAgent();
+
         startPos = transform.position;
         startRot = transform.rotation;
 
@@ -29,10 +47,27 @@ public class AnimationAgent : Agent
         //Setup the body parts in the joint controller
         jointControl.SetupBodyPart(body);
 
-        foreach (var joint in joints)
+        /*foreach (var joint in joints)
         {
             jointControl.SetupBodyPart(joint);
-        }
+        }*/
+
+        jointControl.SetupBodyPart(jointUpper1);
+        jointControl.SetupBodyPart(jointUpper2);
+        jointControl.SetupBodyPart(jointUpper3);
+        jointControl.SetupBodyPart(jointUpper4);
+        jointControl.SetupBodyPart(jointUpper5);
+        jointControl.SetupBodyPart(jointUpper6);
+        jointControl.SetupBodyPart(jointUpper7);
+        jointControl.SetupBodyPart(jointUpper8);
+        jointControl.SetupBodyPart(jointLower1);
+        jointControl.SetupBodyPart(jointLower2);
+        jointControl.SetupBodyPart(jointLower3);
+        jointControl.SetupBodyPart(jointLower4);
+        jointControl.SetupBodyPart(jointLower5);
+        jointControl.SetupBodyPart(jointLower6);
+        jointControl.SetupBodyPart(jointLower7);
+        jointControl.SetupBodyPart(jointLower8);
     }
 
     public void CollectObservationsBody(BodyPart bodyPart)
@@ -87,62 +122,79 @@ public class AnimationAgent : Agent
 
         var i = -1;
         // Pick a new target joint rotation
-        bodyDictionary[joints[0]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[2]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[4]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[6]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[8]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[10]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[12]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
-        bodyDictionary[joints[14]].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper1].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper2].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper3].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper4].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper5].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper6].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper7].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
+        bodyDictionary[jointUpper8].SetJointTargetRotation(vectorAction[++i], vectorAction[++i], 0);
 
-        bodyDictionary[joints[1]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[3]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[5]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[7]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[9]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[11]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[13]].SetJointTargetRotation(vectorAction[++i], 0, 0);
-        bodyDictionary[joints[15]].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower1].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower2].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower3].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower4].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower5].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower6].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower7].SetJointTargetRotation(vectorAction[++i], 0, 0);
+        bodyDictionary[jointLower8].SetJointTargetRotation(vectorAction[++i], 0, 0);
 
-        bodyDictionary[joints[0]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[2]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[4]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[6]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[8]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[10]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[12]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[14]].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper1].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper2].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper3].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper4].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper5].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper6].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper7].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointUpper8].SetJointStrength(vectorAction[++i]);
 
-        bodyDictionary[joints[1]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[3]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[5]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[7]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[9]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[11]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[13]].SetJointStrength(vectorAction[++i]);
-        bodyDictionary[joints[15]].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower1].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower2].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower3].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower4].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower5].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower6].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower7].SetJointStrength(vectorAction[++i]);
+        bodyDictionary[jointLower8].SetJointStrength(vectorAction[++i]);
     }
 
     void FixedUpdate()
     {
+        if (GetStepCount() % 5 == 0)
+        {
+            RequestDecision();
+        }
+        else
+        {
+            RequestAction();
+        }
+
         //Direction to target
         dirToTarget = target.position - body.position;
         dirToTarget.Normalize();
 
-        //Give reward for facing target
-        if (body.forward.x == dirToTarget.x && body.forward.z == dirToTarget.z)
-        {
-            AddReward(1f / 1000);
-        }
+        //Give positive reward if angle between walker's forward and the direction 
+        //to the target is less than 90 degrees
+        //else give a negative reward
+        float targetBodyDot = Vector3.Dot(dirToTarget, body.forward);
+        AddReward(1f / (targetBodyDot * 1000));
 
-        //Give larger reward for being close to target
+        //Give small reward that increases as the walker gets closer to the target
         float distToTarget = Vector3.Distance(body.position, target.position);
-        AddReward(1f / distToTarget);
+        if (distToTarget < 50)
+        {
+            AddReward(1f / (distToTarget * 100));
+        }
 
         //Give negative reward every step
         AddReward(-1f / MaxStep);
     }
+
+    /*public override float[] Heuristic()
+    {
+
+    }*/
 
     public override void AgentReset()
     {
