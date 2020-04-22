@@ -44,10 +44,7 @@ public class Projectile : MonoBehaviour
         }
 
         //collision.gameObject.tag != "Untagged" && 
-        if (collision.gameObject.tag != "floor")
-        {
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
 
         Debug.Log("Collided with " + collision.gameObject.tag);
     }
