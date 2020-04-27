@@ -159,6 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3470686064816075150}
+  - component: {fileID: 6211069604894714056}
   m_Layer: 0
   m_Name: wall_massive_corner
   m_TagString: Untagged
@@ -206,6 +207,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6211069604894714056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470686064816237678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.703331, y: 2.7499914, z: 1.8068867}
+  m_Center: {x: -3.5713758, y: 1.3054967, z: 8.314088}
 --- !u!1 &3470686064816237680
 GameObject:
   m_ObjectHideFlags: 0
