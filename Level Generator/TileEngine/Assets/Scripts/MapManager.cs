@@ -40,6 +40,12 @@ public class MapManagerEditor : Editor
         {
             manager.ImportMapFromFile();
         }
+
+        //Button to generate the training data file
+        if (GUILayout.Button("Generate Training Data"))
+        {
+            manager.GenerateTrainingData();
+        }
     }
 }
 public class MapManager : MonoBehaviour
@@ -134,6 +140,42 @@ public class MapManager : MonoBehaviour
             {
                 Debug.Log(e.Message);
             }
+        }
+    }
+
+    public void GenerateTrainingData()
+    {
+        DirectoryInfo dir = new DirectoryInfo("Assets/Maps");
+        FileInfo[] info = dir.GetFiles("*.txt");
+
+        path = Application.dataPath + "/TrainingData.txt";
+
+        if (!File.Exists(path))
+        {
+            foreach (FileInfo f in info)
+            {
+                try
+                {
+                    using (StreamReader sr = f.OpenText())
+                    {
+                        string input = sr.ReadToEnd();
+                        string[] lines = input.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+                        for (int i = 2; i < lines.Length; i++)
+                        {
+                            File.AppendAllText(path, lines[i]);
+                        }
+                    }
+                }
+                catch (IOException e)
+                {
+                    Debug.Log(e.Message);
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("Training data file already exists please delete it.");
         }
     }
 

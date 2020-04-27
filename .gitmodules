@@ -1,0 +1,3 @@
+[submodule "Level Generator/RNN/char-rnn"]
+	path = Level Generator/RNN/char-rnn
+	url = https://github.com/karpathy/char-rnn
