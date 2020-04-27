@@ -163,7 +163,7 @@ public class MapManager : MonoBehaviour
 
                         for (int i = 2; i < lines.Length; i++)
                         {
-                            File.AppendAllText(path, lines[i]);
+                            File.AppendAllText(path, lines[i] + "\n");
                         }
                     }
                 }
