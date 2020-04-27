@@ -123,14 +123,21 @@ public class MapManager : MonoBehaviour
                     {
                         string[] data = lines[i].Split(new[] { ',', '(', ')', ' ' }, System.StringSplitOptions.RemoveEmptyEntries);         //Split the line into their corresponding data segments (x, y, name)
 
-                        //Loop through assets and find the asset with the matching name
-                        foreach (TileBase asset in assets)
+                        if (data.Length < 3)
                         {
-                            if (asset.name == data[2])
+                            return;
+                        }
+                        else
+                        {
+                            //Loop through assets and find the asset with the matching name
+                            foreach (TileBase asset in assets)
                             {
-                                int.TryParse(data[0], out x);
-                                int.TryParse(data[1], out y);
-                                tilemap.SetTile(new Vector3Int(x, y, 0), asset);                                                            //Set the tile with the given data
+                                if (asset.name == data[2])
+                                {
+                                    int.TryParse(data[0], out x);
+                                    int.TryParse(data[1], out y);
+                                    tilemap.SetTile(new Vector3Int(x, y, 0), asset);                                                            //Set the tile with the given data
+                                }
                             }
                         }
                     }
