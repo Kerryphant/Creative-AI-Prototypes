@@ -12,9 +12,11 @@ public class CarAgent : Agent
     float horizontal;
     float accelerate;
     float brake;
+    float samePosTime;
     bool handbrake = false;
 
     Vector3 startPos;
+    Vector3 lastPos;
     Quaternion startRot;
 
     public float checkpointReward = 1;
@@ -87,6 +89,18 @@ public class CarAgent : Agent
         {
             AddReward(-0.1f);
         }
+
+        if (lastPos == gameObject.transform.position)
+        {
+            samePosTime += Time.deltaTime;
+
+            if(samePosTime >= 5)
+            {
+                Done();
+            }
+        }
+
+        lastPos = gameObject.transform.position;
     }
 
     //Collecting all the non raycast observations

@@ -65,6 +65,8 @@ public class CarController : MonoBehaviour
         acceleration = Mathf.Clamp(acceleration, 0, 1);
         brake = Mathf.Clamp(brake, 0, 1);
 
+        //Debug.Log(brake);
+
         //Set the front wheels to steer
         //0 and 1 are the front wheels in the array
         steerAngle = steer * maxSteerAngle;
@@ -152,7 +154,7 @@ public class CarController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject);
+        //Debug.Log(collision.gameObject);
 
         if(collision.gameObject.tag == "Car")
         {

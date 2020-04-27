@@ -40,16 +40,28 @@ TankShoot:
             encoding_size: 256
 
 Driving:
-    batch_size: 32
-    normalize: false
-    num_layers: 3
-    hidden_units: 60
+    batch_size: 2048
+    normalize: true
+    beta: 1e-4
+    num_layers: 2
+    hidden_units: 256
+    init_entcoef: 
     beta: 5.0e-3
-    buffer_size: 512
+    buffer_size: 12288
     max_steps: 1.0e7
     summary_freq: 2000
-    time_horizon: 3
+    lambd: 0.925
+    num_epoch: 5
+    time_horizon: 150
+    epsilon: 0.3
+    use_recurrent: true
+    sequence_length: 50
+    memory_size: 128
     reward_signals:
         extrinsic:
             strength: 1.0
-            gamma: 0.9
+            gamma: 0.8
+        curiosity:
+            strength: 0.1
+            gamma: 0.95
+            encoding_size: 128

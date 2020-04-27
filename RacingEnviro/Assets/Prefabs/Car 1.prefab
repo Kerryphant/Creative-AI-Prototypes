@@ -53,6 +53,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -567,9 +568,9 @@ MonoBehaviour:
     vectorActionSize: 03000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 1
-  m_Model: {fileID: 5022602860645237092, guid: 283d8a26d8e13c74396f6e9ef7707d3e, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 1
-  m_BehaviorType: 2
+  m_BehaviorType: 0
   m_BehaviorName: Driving
   m_TeamID: 0
   m_useChildSensors: 1
