@@ -337,6 +337,11 @@ PrefabInstance:
       propertyPath: m_BrainParameters.vectorObservationSize
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: 1906117816, guid: 25b15d093661aaa4797834e4224adefd, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 971e5c9c986da67448a1ddf1067d5efa,
+        type: 3}
     - target: {fileID: 1906117817, guid: 25b15d093661aaa4797834e4224adefd, type: 3}
       propertyPath: maxJointSpring
       value: 40000
