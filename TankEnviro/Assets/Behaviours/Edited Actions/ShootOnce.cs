@@ -21,10 +21,10 @@ namespace BBSamples.PQSG // Programmers Quick Start Guide
         /// <remarks>If the shootPoint is not established, we look for the shooting point.</remarks>
 
         // Initialization method. If not established, we look for the shooting point.
-        /*public override void OnStart()
+        public override void OnStart()
         {
             base.OnStart();
-        } // OnStart*/
+        } // OnStart
 
 
         /// <summary>Update method of DoneShootOnce.</summary>

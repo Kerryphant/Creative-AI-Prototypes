@@ -48,7 +48,7 @@ MonoBehaviour:
     id=\"11\" />\r\n            </guard>\r\n            <child>\r\n              <SubbehaviorNode
     id=\"8\" />\r\n            </child>\r\n          </GuardAndNode>\r\n        </elem>\r\n
     \     </children>\r\n      <inputParams />\r\n      <outputParams />\r\n      <localParams
-    />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"9\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\"
+    />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"9\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\"
     name=\"Perception/IsTargetClose\">\r\n      <inputParams>\r\n        <inputValues>\r\n
     \         <entry name=\"target\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
     blackboard=\"enemy\" />\r\n          <entry name=\"closeDistance\" type=\"System.Single\"
@@ -68,7 +68,7 @@ MonoBehaviour:
     \     <children>\r\n        <elem>\r\n          <ActionNode id=\"13\" />\r\n        </elem>\r\n
     \       <elem>\r\n          <ActionNode id=\"16\" />\r\n        </elem>\r\n      </children>\r\n
     \     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </SequenceNode>\r\n
-    \   <ConditionEvalNode id=\"11\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"AlwaysTrue\">\r\n
+    \   <ConditionEvalNode id=\"11\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"AlwaysTrue\">\r\n
     \     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n
     \   <SubbehaviorNode id=\"8\">\r\n      <_guid>353a70010b073184d8e362021b2c2300</_guid>\r\n
     \     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"wanderArea\"
@@ -153,7 +153,7 @@ MonoBehaviour:
     all its children in sequence until all of them are successful\" cardinality=\"-1\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <SequenceNode
     id=\"6\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n    <ConditionEvalNode
-    id=\"10\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
+    id=\"10\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
     position=\"739.9076 663.7857\" name=\"Perception/IsTargetClose\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n
     \         <ConditionEvalNode id=\"10\" />\r\n          <PrioritySelectorNode id=\"5\"

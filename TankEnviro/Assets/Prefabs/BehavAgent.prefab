@@ -88,7 +88,7 @@ MeshCollider:
   m_GameObject: {fileID: 5928020626245428698}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2755330385115387753}
   - component: {fileID: 7445226846987835100}
   - component: {fileID: 8404169630636256752}
+  - component: {fileID: 4790393772125498501}
   m_Layer: 0
   m_Name: BehavAgent
   m_TagString: tankAgent
@@ -121,7 +122,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8171423775519283616}
-  m_LocalRotation: {x: -0, y: 0.48895502, z: -0, w: 0.8723091}
+  m_LocalRotation: {x: 0, y: 0.48895618, z: 0, w: 0.8723084}
   m_LocalPosition: {x: -13.4, y: 0.5, z: -16.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8171423775519283616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f1a27a5fcef199448af4b8ff919a642, type: 3}
   m_Name: 
@@ -199,6 +200,8 @@ MonoBehaviour:
   readyShoot: 1
   timeSinceShoot: 0
   health: 15
+  deathCount: 0
+  teamID: 1
   Fire:
     idInternal: 0
     valueGuidInternal: 
@@ -277,3 +280,16 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
+--- !u!65 &4790393772125498501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171423775519283616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8906016, y: 1.6161098, z: 3.1588116}
+  m_Center: {x: 0.074093826, y: 0.88664126, z: -0.05328369}
