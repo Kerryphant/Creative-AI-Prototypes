@@ -107,6 +107,8 @@ MonoBehaviour:
   readyShoot: 1
   timeSinceShoot: 0
   health: 15
+  deathCount: 0
+  teamID: 0
   Fire:
     idInternal: 0
     valueGuidInternal: 
@@ -158,8 +160,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6399775, y: 1.577293, z: 3.1252952}
-  m_Center: {x: 0.026960611, y: 0.7661845, z: -0.034039736}
+  m_Size: {x: 2.6399775, y: 4.4572525, z: 3.1252952}
+  m_Center: {x: 0.026960611, y: 2.2061644, z: -0.034039736}
 --- !u!1 &2802668996145113597
 GameObject:
   m_ObjectHideFlags: 0
