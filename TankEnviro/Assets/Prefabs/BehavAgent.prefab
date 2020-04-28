@@ -199,6 +199,16 @@ MonoBehaviour:
   readyShoot: 1
   timeSinceShoot: 0
   health: 15
+  Fire:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 87711e3cc7b4d8d4eb8a31efa4247118,
+      type: 2}
+  Death:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dcea81a5840c5ad4fa08afdd4d49a577,
+      type: 2}
 --- !u!114 &8404169630636256752
 MonoBehaviour:
   m_ObjectHideFlags: 0

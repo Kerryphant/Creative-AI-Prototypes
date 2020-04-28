@@ -101,6 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdea31126265194a87a5c393e304c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collision:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ebfe4abd57efe7f448df7d6666a4ff3c,
+      type: 2}
 --- !u!136 &1030358679363690560
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -122,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7547331089906848616}
     m_Modifications:
+    - target: {fileID: 7571269943821097366, guid: 6fb0d6c354742ac439ff04035ea38941,
+        type: 3}
+      propertyPath: m_Name
+      value: tank_shell
+      objectReference: {fileID: 0}
     - target: {fileID: 6866252472400915333, guid: 6fb0d6c354742ac439ff04035ea38941,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,11 +201,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.009830493
-      objectReference: {fileID: 0}
-    - target: {fileID: 7571269943821097366, guid: 6fb0d6c354742ac439ff04035ea38941,
-        type: 3}
-      propertyPath: m_Name
-      value: tank_shell
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb0d6c354742ac439ff04035ea38941, type: 3}
