@@ -20,7 +20,12 @@ public class TankAgent : Agent
 	private const float turnStrength = 0.6f;    //tank turn speed
 	private float spawnRadius = 0.0f;
 
-	private void Start()
+
+    public AK.Wwise.Event Fire = new AK.Wwise.Event();
+    public AK.Wwise.Event Death = new AK.Wwise.Event();
+
+
+    private void Start()
 	{
 		tankArea = GetComponentInParent<TankArea>();
 		rigidbody = GetComponent<Rigidbody>();
@@ -125,7 +130,11 @@ public class TankAgent : Agent
 		{
 			health = 15;
 
-			transform.position = TankArea.ChooseRandomPosition(startingPos, spawnRadius, spawnRadius);// + new Vector3(0, 0, 7);
+
+
+            Death.Post(gameObject);
+
+            transform.position = TankArea.ChooseRandomPosition(startingPos, spawnRadius, spawnRadius);// + new Vector3(0, 0, 7);
 			transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 		}
 
@@ -163,7 +172,10 @@ public class TankAgent : Agent
 			//set up the onwer variable to allow for callback
 			projectile.setOwner(gameObject);
 
-			projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.VelocityChange);
+            //wwise event for gun shot
+            Fire.Post(gameObject);
+
+            projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.VelocityChange);
 
 			timeSinceShoot = 0;
 			readyShoot = false;

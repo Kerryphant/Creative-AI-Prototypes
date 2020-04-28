@@ -9,6 +9,9 @@ public class Projectile : MonoBehaviour
 
     private TankAgent owner;
 
+
+    public AK.Wwise.Event Collision = new AK.Wwise.Event();
+
     void Start()
 	{
         Destroy(this.gameObject, 3);
@@ -45,6 +48,9 @@ public class Projectile : MonoBehaviour
 
         //collision.gameObject.tag != "Untagged" && 
         Destroy(this.gameObject);
+
+        //wwise event for Collision
+        Collision.Post(gameObject);
 
         Debug.Log("Collided with " + collision.gameObject.tag);
     }
