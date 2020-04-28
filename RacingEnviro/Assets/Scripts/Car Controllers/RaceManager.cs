@@ -65,7 +65,7 @@ public class RaceManager : MonoBehaviour
         }
         else
         {
-            car.gameObject.GetComponent<CarAgent>().AddReward(-10);
+            car.gameObject.GetComponent<CarAgent>().Done();
         }
     }
 

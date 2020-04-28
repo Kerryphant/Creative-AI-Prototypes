@@ -15,6 +15,7 @@ public class CarAgent : Agent
     float samePosTime;
     float noCheckpointTime = 0;
     bool handbrake = false;
+    bool reachedACheckpoint = false;
 
     Vector3 startPos;
     Vector3 lastPos;
@@ -49,8 +50,6 @@ public class CarAgent : Agent
     public void ReachedCheckpoint(Checkpoint checkpoint)
     {
         AddReward(checkpointReward);
-
-        noCheckpointTime = 0;
     }
 
     //Sets all the agent actions;
@@ -104,13 +103,6 @@ public class CarAgent : Agent
                 Done();
             }
         }
-
-        if(noCheckpointTime >= 5)
-        {
-            Done();
-        }
-
-        noCheckpointTime += Time.deltaTime;
 
         lastPos = gameObject.transform.position;
     }
