@@ -29,6 +29,13 @@ public class MapManagerEditor : Editor
         if (EditorGUI.EndChangeCheck())
             serializedObject.ApplyModifiedProperties();
 
+
+        //Button to clear the tilemap
+        if (GUILayout.Button("Clear Map"))
+        {
+            manager.ClearTileMap();
+        }
+
         //Button to call the export map function
         if (GUILayout.Button("Export Map"))
         {
@@ -184,6 +191,11 @@ public class MapManager : MonoBehaviour
         {
             Debug.LogError("Training data file already exists please delete it.");
         }
+    }
+
+    public void ClearTileMap()
+    {
+        tilemap.ClearAllTiles();
     }
 
     //Simple getter for current tile count (used to display in inspector)
