@@ -13,6 +13,7 @@ public class CarAgent : Agent
     float accelerate;
     float brake;
     float samePosTime;
+    float noCheckpointTime = 0;
     bool handbrake = false;
 
     Vector3 startPos;
@@ -40,12 +41,16 @@ public class CarAgent : Agent
         transform.rotation = startRot;
         controller.Reset();
         raceManager.ResetAgentCP(this.gameObject);
+        noCheckpointTime = 0;
+        samePosTime = 0;
     }
 
     //Give the agent a reward when it reaches a checkpoint
     public void ReachedCheckpoint(Checkpoint checkpoint)
     {
         AddReward(checkpointReward);
+
+        noCheckpointTime = 0;
     }
 
     //Sets all the agent actions;
@@ -99,6 +104,13 @@ public class CarAgent : Agent
                 Done();
             }
         }
+
+        if(noCheckpointTime >= 5)
+        {
+            Done();
+        }
+
+        noCheckpointTime += Time.deltaTime;
 
         lastPos = gameObject.transform.position;
     }

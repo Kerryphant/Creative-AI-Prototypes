@@ -166,8 +166,8 @@ public class CarController : MonoBehaviour
             CarAgent agent = gameObject.GetComponent<CarAgent>();
             if (agent != null)
             {
-                //agent.AddReward(-100);
-                agent.Done();
+                agent.AddReward(-100);
+                //agent.Done();
             }
         }
     }
@@ -177,7 +177,7 @@ public class CarController : MonoBehaviour
         {
             CarAgent agent = gameObject.GetComponent<CarAgent>();
             if (agent != null)
-                agent.AddReward(-0.10f);
+                agent.AddReward(-10f);
         }
     }
 }
