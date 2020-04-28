@@ -16,6 +16,8 @@ public class TankAgent : Agent
 	public bool readyShoot = true; // if the Tank is able to shoot
 	public float timeSinceShoot;
 	public float health = 15;
+	public int deathCount = 0;
+	public int teamID = 0;
 	private Vector3 startingPos;
 	private const float turnStrength = 0.6f;    //tank turn speed
 	private float spawnRadius = 0.0f;
@@ -124,6 +126,8 @@ public class TankAgent : Agent
 		if (health <= 0)
 		{
 			health = 15;
+
+			deathCount++;
 
 			transform.position = TankArea.ChooseRandomPosition(startingPos, spawnRadius, spawnRadius);// + new Vector3(0, 0, 7);
 			transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
