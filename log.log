@@ -1,0 +1,184 @@
+* 19d01cd : Fixed settings in levelscene
+*   1defea0 : Merge pull request #20 from Kerryphant/navMesh
+|\  
+| * a66b531 : created a working scene for video and build purposes
+| * 9a04ad6 : Added navmesh
+| * 39b1266 : Added navmesh
+| * 12d311d : added tanks into levelscene and added some colliders to the level
+* | aac84b2 : Random final fixes
+* | 246e7b5 : Added generated maps, removed temp files
+|/  
+* 6ce0018 : Fixed Level Scene
+* 5069376 : Visualisation changes
+* 8661c49 : trying to fix audio and lighting in Level Scene
+*   d1239d9 : Merge pull request #19 from Kerryphant/JamesLevel
+|\  
+| * 2265e40 : Wwise sound bank
+* |   9689c4e : Merge pull request #18 from Kerryphant/tank-win-condition
+|\ \  
+| * \   7a426a5 : Merge branch 'master' into tank-win-condition
+| |\ \  
+| |/ /  
+|/| |   
+* | |   efddb87 : Merge pull request #17 from Kerryphant/JamesLevel
+|\ \ \  
+| | |/  
+| |/|   
+| * | 3e9ad6a : Wwise events
+| * | 84788c3 : Wwise collision events
+| * | d84dabd : Wwise fixed again
+| * | 4536c8c : Floor refixed
+| * | be446a1 : Wwise and Floor
+* | |   07d1cf6 : Merge pull request #13 from Kerryphant/animation
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 03034f7 : Edited reward values
+| * | 00052ef : Edited reward values
+| * | d4a86ad : Added rewards
+| * | 1f9cf20 : Setup hit boxes on walker joints
+| * | 14c60e0 : Added models
+| * | 70ac6fe : Created area and imported ml agents
+| | * 73b3efd : Added win checker script
+| |/  
+|/|   
+* |   8b72772 : Merge branch 'master' of https://github.com/Kerryphant/Creative-AI-Prototypes
+|\ \  
+| * | 9f40ccd : Fixed and Built lighting for tank prototype
+* | | f7a610c : Merge branch 'master' of https://github.com/Kerryphant/Creative-AI-Prototypes
+|\| | 
+| * | faf883b : Added some generated maps
+| * | 100ff11 : Made a load of maps
+| * | 155d8df : Finished up level generator
+| * | b1a54ea : Cleanup of excess files
+| * | f3f5b96 : Cleaned up files
+| * |   10afc53 : Merge pull request #15 from Kerryphant/Alexander-TileEngine-LevelManager
+| |\ \  
+| | * | e8f03fc : Built Lighting For Racing
+| | * | 65f7b10 : Refactoring
+| | * | 9cb7401 : Deleted Summaries Folder
+| | * | 2859201 : Added Level Manager
+* | | | 56d20b4 : awkward force merge of LevelJames branch
+|/ / /  
+* | |   4ed5f01 : Merge pull request #14 from Kerryphant/LevelMerge
+|\ \ \  
+| * | | 2af453f : Merge branch 'LevelJames'
+|/| | | 
+| * | | d3f1807 : Merge branch 'master' into LevelJames
+| |\| | 
+| * | | 8e6a801 : Level updated and Wwise integration
+| * | | ec142d9 : First Level
+* | | |   1708a7b : Merge pull request #12 from Kerryphant/tank
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | 8cfa9f0 : training agent
+* | | |   b1be057 : Merge branch 'Alexander-CarAgent'
+|\ \ \ \  
+| |_|_|/  
+|/| | |   
+| * | | bb6c0f1 : Bug fixes
+| * | | 26a41b6 : Agent Complete
+| * | | 5f09efc : Updated Car Prefab
+| * | | fd9b48d : Cleaned up Scene
+| * | | f55a086 : Created Menu
+| * | | ffe42f8 : Built The Lighting
+| * | | 8e803ee : Inititialised git LFS as we were having issues with lightmap sizes etc
+| * | | ce8befe : Textured Trees
+| * | |   9c8392b : Merge branch 'Isobel-Terrain' of https://github.com/Kerryphant/Creative-AI-Prototypes into Isobel-Terrain
+| |\ \ \  
+| | * | | 7bae481 : Added Tree Shader
+| * | | | fd0ede2 : Textured Car
+| |/ / /  
+| * | | f61c8a1 : Continued working on the terrain
+| * | | 6e86733 : Fixed Road Builder
+| * | | 0383bce : Started Work On Terrain
+* | | |   75d079f : Merge pull request #8 from Kerryphant/tank
+|\ \ \ \  
+| |/ / /  
+|/| / /   
+| |/ /    
+| * | b48f6b4 : created and set up the build scene. Added trained models to RL tanks
+| * | 31d5c60 : Created Behaviour tree tank prefab. Imported projectile model.
+| * |   5b419cc : Merge pull request #9 from Kerryphant/art
+| |\ \  
+| | * \   8f67440 : Merge branch 'tank' into art
+| | |\ \  
+| | |/ /  
+| |/| |   
+| * | |   14c5b95 : Merge branch 'master' into tank
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | | d1c81ff : Added Grass Asset & Road Builder
+* | | | 0143826 : Added Training Config Folder
+* | | |   27cb9b3 : Merge pull request #4 from Kerryphant/Isobel-ArtAssets
+|\ \ \ \  
+| |_|_|/  
+|/| | |   
+| * | | 17cdfda : Added 3D Models
+|/ / /  
+| * |   25068ae : Merge pull request #7 from Kerryphant/tank-calum
+| |\ \  
+| | * | 2c96279 : Edited shoot once action, added finished player behaviour, fixed projectiles hitting floor
+| | * | e4ee1e3 : Added player behaviour tree
+| | * |   bf99a4d : Merge branch 'tank' into tank-calum
+| | |\ \  
+| | |/ /  
+| |/| |   
+| * | |   e29c152 : Merge pull request #6 from Kerryphant/tank-kerry
+| |\ \ \  
+| | * | | 8aebe2f : fixed tanks moving off of the map when area is reset. Removed destorying of tanks when health is 0 as it breaks the training
+| | * | | ac28bef : Projectiles now hit and give damage to tank agents. Added multiple tank agents to the scene and removed the enemy tanks for now.
+| | * | | 4e7df53 : added ability for tank agent to take damage
+| * | | | e87cab5 : Merge pull request #5 from Kerryphant/tank-kerry
+| |\| | | 
+| | * | | 5555e13 : removed file which was not needed and created merge conflicts
+| | * | | 33e1b4f : Fixed tank ray casts being scaled down
+| | * | | ba42aaa : Tweaked scene and prefab settings
+| | * | | ab72db3 : Tweaks to tank agent turning and added in delay to tank's shooting.
+| | * | | 8cc9cbf : Fixed tank rotation on spot. Added Ability to shoot. Modified gitignore file to remove csharr_timers file
+| | * | |   9d888e8 : merge tank
+| | |\ \ \  
+| | | * \ \   6973c81 : merge from master
+| | | |\ \ \  
+| |_|_|/ / /  
+|/| | | | |   
+* | | | | |   21530cb : Merge pull request #3 from Kerryphant/art
+|\ \ \ \ \ \  
+* | | | | | | ede9307 : Project Clean-up
+* | | | | | |   d79b48c : Merge pull request #2 from Kerryphant/racing-CarController
+|\ \ \ \ \ \ \  
+| * | | | | | | 5e40df9 : Update SampleScene.unity
+| * | | | | | | 2876a82 : Camera now follows car
+| * | | | | | | 151c1c0 : Car Controller Working
+|/ / / / / / /  
+* | | | | | | ec2c04c : Initial Project Setup
+| | | * | | | 2c250aa : Moved changes to tank kerry
+| | | |\| | | 
+| | | | * | | e9ceed6 : merge
+| | | * | | | e016512 : merge
+| | | | | * | 0f72490 : Added wander behaviour tree
+| | | | | * | 853e3c9 : Imported Behaviour Bricks
+| | | | |/ /  
+| | | | * / e969ac8 : Fixed typo in all readme files
+| | | |/ /  
+| | |/| |   
+| | | | * 778892e : made the bullet glow by turning on lighting
+| | | | * 52ec4ee : added "tank_shell" projectile in "art_assets
+| | |_|/  
+| |/| |   
+| * | | 20ae571 : upload presentation scene, it just presents all the assets uploaded in the last commitment and can be ignored, i just want a screenshot of it for my documentation
+| * | | 13d41ab : Uploaded all relevant assets (4color tank variation, modular wall pieces consisting of walls and corners for thin wall, massive wall, building; as well as one barricade. Assets can be found in Assets/Art_Assets
+| | |/  
+| |/|   
+| * | be14933 : Added comment to enemy file
+|/ /  
+* |   27e8167 : Merge pull request #1 from Kerryphant/tank-HDRP-Upgrade
+|\ \  
+| * | 1105692 : HDRP Upgrade Complete
+| |/  
+| * 9279952 : Fixed typo in main readme file
+|/  
+* 379d5f9 : Inital folder structure for first two prototypes. Tank agent has basic movement within a scene
+* d443cf7 : Initial commit
